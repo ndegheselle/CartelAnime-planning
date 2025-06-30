@@ -8,6 +8,7 @@
                     quasi. In deleniti eaque aut repudiandae et a id nisi.
                 </p>
                 <NuxtLink to="/drag" class="btn">About page</NuxtLink>
+                <NuxtLink to="/planning" class="btn">Planning page</NuxtLink>
             </div>
         </div>
     </div>
