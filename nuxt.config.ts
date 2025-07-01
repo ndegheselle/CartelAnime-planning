@@ -10,11 +10,13 @@ export default defineNuxtConfig({
     },
 
     css: ["~/assets/app.css"],
-    modules: ["@nuxtjs/i18n"],
+    modules: [
+        "@nuxtjs/i18n"
+    ],
     i18n: {
         locales: [
-            { code: 'fr', name:"Français", language: 'fr-FR', file: 'fr.json' },
-            { code: 'en', name:"English", language: 'en-EN', file: 'en.json' },
+            { code: 'fr', name: "Français", language: 'fr-FR', file: 'fr.json' },
+            { code: 'en', name: "English", language: 'en-EN', file: 'en.json' },
         ],
         defaultLocale: 'fr',
     }

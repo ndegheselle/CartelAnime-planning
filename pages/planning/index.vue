@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue';
+import DayHeader from './DayHeader.vue';
 
 const users = ref([
     { avatarUrl: 'https://avatar.iran.liara.run/public?rand=1', role: 'Technician', name: 'User 1' },
@@ -17,43 +18,15 @@ const work = {
 
 <template>
     <div class="flex">
-        <h2 class="w-32">Gens</h2>
-        <div class="grid grid-cols-7 w-full">
-            <div class="card bg-base-100 card-border">
-                <div class="card-body">
-                    <h2>Lundi</h2>
-                </div>
-            </div>
-            <div class="card bg-base-100 card-border">
-                <div class="card-body">
-                    <h2>Mardi</h2>
-                </div>
-            </div>
-            <div class="card bg-base-100 card-border">
-                <div class="card-body">
-                    <h2>Mercredi</h2>
-                </div>
-            </div>
-            <div class="card bg-base-100 card-border">
-                <div class="card-body">
-                    <h2>Jeudi</h2>
-                </div>
-            </div>
-            <div class="card bg-base-100 card-border">
-                <div class="card-body">
-                    <h2>Vendredi</h2>
-                </div>
-            </div>
-            <div class="card bg-base-100 card-border">
-                <div class="card-body">
-                    <h2>Samedi</h2>
-                </div>
-            </div>
-            <div class="card bg-base-100 card-border">
-                <div class="card-body">
-                    <h2>Dimanche</h2>
-                </div>
-            </div>
+        <h2 class="w-32"></h2>
+        <div class="grid grid-cols-7 w-full my-2">
+            <DayHeader title="Lundi" />
+            <DayHeader title="Mardi" />
+            <DayHeader title="Mercredi" />
+            <DayHeader title="Jeudi" />
+            <DayHeader title="Vendredi" />
+            <DayHeader title="Samedi" />
+            <DayHeader title="Dimanche" />
         </div>
     </div>
     <div class="flex"
@@ -71,52 +44,16 @@ const work = {
                 <div class="text-sm opacity-50">{{ user.role }}</div>
             </div>
         </div>
-        <div class="grid grid-cols-7 w-full">
-            <div class="card bg-base-100 card-border">
-                <div class="card-body">
-                    <h2>Lundi</h2>
-                </div>
-            </div>
-            <div class="card bg-base-100 card-border">
-                <div class="card-body">
-                    <h2>Mardi</h2>
-                </div>
-            </div>
-            <div class="card bg-base-100 card-border">
-                <div class="card-body">
-                    <h2>Mercredi</h2>
-                </div>
-            </div>
-            <div class="card bg-base-100 card-border">
-                <div class="card-body">
-                    <h2>Jeudi</h2>
-                </div>
-            </div>
-            <div class="card bg-base-100 card-border">
-                <div class="card-body">
-                    <h2>Vendredi</h2>
-                </div>
-            </div>
-            <div class="card bg-base-100 card-border">
-                <div class="card-body">
-                    <h2>Samedi</h2>
-                </div>
-            </div>
-            <div class="card bg-base-100 card-border">
-                <div class="card-body">
-                    <h2>Dimanche</h2>
-                </div>
-            </div>
+        <div class="w-full flex items-center">
+            <svg class="w-full h-4"
+                 viewBox="0 0 10080 100"
+                 xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <rect x="120"
+                      width="1440"
+                      height="100"
+                      rx="20"
+                      fill="var(--color-primary)" />
+            </svg>
         </div>
     </div>
-
 </template>
-
-<style scoped>
-table td,
-table,
-th {
-    border-left-width: 1px;
-    border-color: color-mix(in oklab, var(--color-base-content) 5%, transparent);
-}
-</style>
