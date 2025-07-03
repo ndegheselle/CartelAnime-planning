@@ -48,7 +48,7 @@ const work = {
             <svg class="w-full h-4"
                  viewBox="0 0 10080 100"
                  xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                <rect x="120"
+                <rect x="0"
                       width="1440"
                       height="100"
                       rx="20"
