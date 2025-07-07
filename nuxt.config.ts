@@ -17,12 +17,9 @@ export default defineNuxtConfig({
         ],
         defaultLocale: 'fr',
     },
-    runtimeConfig: {
-        baseURL: '/api/auth'
-    },
     auth: {
+        baseURL: process.env.AUTH_ORIGIN,
         globalAppMiddleware: true,
-        originEnvKey: 'NUXT_BASE_URL',
         provider: {
             type: 'local',
             endpoints: {
@@ -30,7 +27,16 @@ export default defineNuxtConfig({
                 signOut: { path: '/logout', method: 'post' },
                 getSession: { path: '/session', method: 'get' },
                 signUp: false
-            }
+            },
+            token: {
+                signInResponseTokenPointer: '/token/accessToken'
+            },
+        }
+    },
+    runtimeConfig: {
+        authSecret: process.env.NUXT_AUTH_SECRET,
+        public: {
+            authUrl: process.env.NUXT_AUTH_URL || 'http://localhost:3000/api/auth'
         }
     }
 })
