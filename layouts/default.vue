@@ -20,13 +20,13 @@ const { locales, setLocale, locale } = useI18n();
             </aside>
             <nav class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
                 <a>
-                    <i class="text-3xl fa-brands fa-twitter"></i>
+                    <i class="text-xl fa-brands fa-twitter"></i>
                 </a>
                 <a>
-                    <i class="text-3xl fa-brands fa-youtube"></i>
+                    <i class="text-xl fa-brands fa-youtube"></i>
                 </a>
                 <a>
-                    <i class="text-3xl fa-brands fa-facebook"></i>
+                    <i class="text-xl fa-brands fa-facebook"></i>
                 </a>
             </nav>
         </footer>

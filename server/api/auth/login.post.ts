@@ -1,4 +1,3 @@
-// server/api/auth/login.post.ts
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
@@ -6,7 +5,7 @@ import jwt from 'jsonwebtoken';
 const users = [
   {
     id: '1',
-    email: 'user@example.com',
+    login: 'user@example.com',
     password: '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // "password"
     name: 'John Doe',
     role: 'user'
@@ -14,22 +13,22 @@ const users = [
 ]
 
 export default defineEventHandler(async (event) => {
-  const { email, password } = await readBody(event)
+  const { login, password } = await readBody(event)
 
-  if (!email || !password) {
+  if (!login || !password) {
     throw createError({
       statusCode: 400,
-      statusMessage: 'Email and password are required'
+      statusMessage: 'Email and password are required.'
     })
   }
 
   // Find user by email
-  const user = users.find(u => u.email === email)
+  const user = users.find(u => u.login === login)
   
   if (!user) {
     throw createError({
       statusCode: 401,
-      statusMessage: 'Invalid credentials'
+      statusMessage: 'Invalid credentials.'
     })
   }
 
@@ -39,7 +38,7 @@ export default defineEventHandler(async (event) => {
   if (!isValidPassword) {
     throw createError({
       statusCode: 401,
-      statusMessage: 'Invalid credentials'
+      statusMessage: 'Invalid credentials.'
     })
   }
 
@@ -47,7 +46,7 @@ export default defineEventHandler(async (event) => {
   const token = jwt.sign(
     { 
       id: user.id,
-      email: user.email,
+      email: user.login,
       name: user.name,
       role: user.role
     },
@@ -61,7 +60,7 @@ export default defineEventHandler(async (event) => {
     },
     user: {
       id: user.id,
-      email: user.email,
+      email: user.login,
       name: user.name,
       role: user.role
     }

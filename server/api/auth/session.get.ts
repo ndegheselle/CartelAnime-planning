@@ -1,4 +1,3 @@
-// server/api/auth/session.get.ts
 import jwt from 'jsonwebtoken';
 
 export default defineEventHandler(async (event) => {
@@ -8,7 +7,14 @@ export default defineEventHandler(async (event) => {
   if (!token) {
     throw createError({
       statusCode: 401,
-      statusMessage: 'No token provided'
+      statusMessage: 'No token provided.'
+    });
+  }
+
+  if (!process.env.NUXT_AUTH_SECRET) {
+    throw createError({
+      statusCode: 500,
+      statusMessage: 'Server configuration error.'
     });
   }
 
