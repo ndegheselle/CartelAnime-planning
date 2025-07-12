@@ -11,7 +11,7 @@ export default defineEventHandler(async (event) => {
     });
   }
 
-  if (!process.env.NUXT_AUTH_SECRET) {
+  if (!process.env.AUTH_SECRET) {
     throw createError({
       statusCode: 500,
       statusMessage: 'Server configuration error.'
@@ -19,7 +19,7 @@ export default defineEventHandler(async (event) => {
   }
 
   try {
-    const decoded = jwt.verify(token, process.env.NUXT_AUTH_SECRET) as any
+    const decoded = jwt.verify(token, process.env.AUTH_SECRET) as any
     
     return {
       user: {
@@ -32,7 +32,7 @@ export default defineEventHandler(async (event) => {
   } catch (error) {
     throw createError({
       statusCode: 401,
-      statusMessage: 'Invalid token'
+      statusMessage: 'Invalid token.'
     });
   }
 })
