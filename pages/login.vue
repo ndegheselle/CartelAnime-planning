@@ -23,8 +23,8 @@ const { signIn } = useAuth()
 const loading = ref(false);
 const error = ref('');
 const credentials = ref({
-    login: '',
-    password: ''
+    login: 'test',
+    password: 'password',
 });
 
 async function handleLogin() {
@@ -32,8 +32,7 @@ async function handleLogin() {
     error.value = '';
 
     try {
-        await signIn(credentials.value);
-        await navigateTo('/dashboard');
+        await signIn(credentials.value, {callbackUrl: '/dashboard'});
     } catch (err: any) {
         error.value = err.message || err.data?.message || 'Login failed';
     } finally {

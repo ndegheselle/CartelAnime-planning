@@ -9,7 +9,7 @@ export default defineNuxtConfig({
         plugins: [tailwindcss()],
     },
     css: ["~/assets/app.css"],
-    modules: ["@nuxtjs/i18n", '@sidebase/nuxt-auth'],
+    modules: ["@nuxtjs/i18n", '@sidebase/nuxt-auth', '@pinia/nuxt'],
     i18n: {
         locales: [
             { code: 'fr', name: "Français", language: 'fr-FR', file: 'fr.json' },
@@ -31,6 +31,13 @@ export default defineNuxtConfig({
             token: {
                 signInResponseTokenPointer: '/token/accessToken'
             },
+            session: {
+                dataType: {
+                    id: 'string | number',
+                    name: 'string',
+                    role: 'string',
+                }
+            }
         }
     },
     runtimeConfig: {
