@@ -30,13 +30,6 @@ export default defineNuxtConfig({
             },
             token: {
                 signInResponseTokenPointer: '/token/accessToken'
-            },
-            session: {
-                dataType: {
-                    id: 'string | number',
-                    name: 'string',
-                    role: 'string',
-                }
             }
         }
     },

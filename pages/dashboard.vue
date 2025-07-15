@@ -2,7 +2,7 @@
     <h1>Dashboard</h1>
     <p>You are currently {{ status }}.</p>
     <div v-if="data">
-    Hello {{ data.name }}!
+    Hello {{ data.user.name }}!
   </div>
 </template>
 
