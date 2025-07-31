@@ -7,8 +7,9 @@
                     Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
                     quasi. In deleniti eaque aut repudiandae et a id nisi.
                 </p>
-                <NuxtLink to="/drag" class="btn">About page</NuxtLink>
-                <NuxtLink to="/planning" class="btn">Planning page</NuxtLink>
+                <NuxtLink to="/drag" class="btn m-2">About page</NuxtLink>
+                <NuxtLink to="/planning" class="btn m-2">Planning page</NuxtLink>
+                <NuxtLink to="/editor" class="btn m-2">Editor page</NuxtLink>
             </div>
         </div>
     </div>

@@ -32,7 +32,7 @@ async function handleLogin() {
     error.value = '';
 
     try {
-        await signIn(credentials.value, {callbackUrl: '/dashboard'});
+        await signIn(credentials.value, {callbackUrl: '/'});
     } catch (err: any) {
         error.value = err.message || err.data?.message || 'Login failed';
     } finally {
